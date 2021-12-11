@@ -1,4 +1,4 @@
-import login from '@/api/sys.js'
+import { login } from '@/api/sys.js'
 import md5 from 'md5'
 
 export default {
