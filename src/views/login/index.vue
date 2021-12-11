@@ -1,20 +1,29 @@
 <template>
   <div class="wrapper">
-    <el-form class="wrapper-form">
+    <el-form class="wrapper-form" :model="loginForm" :rules="loginRules">
       <div class="title-container">
         <h3 class="title">用户登录</h3>
       </div>
-      <el-form-item>
+      <el-form-item prop="username">
         <span class="svg-container">
           <svg-icon icon="user" />
         </span>
-        <el-input placeholder="username" name="username" type="text"></el-input>
+        <el-input
+          placeholder="username"
+          name="username"
+          type="text"
+          v-model="loginForm.username"
+        ></el-input>
       </el-form-item>
-      <el-form-item>
+      <el-form-item prop="password">
         <span class="svg-container">
           <svg-icon icon="password" />
         </span>
-        <el-input placeholder="password" name="password"></el-input>
+        <el-input
+          placeholder="password"
+          name="password"
+          v-model="loginForm.password"
+        ></el-input>
         <span class="show-pwd">
           <svg-icon icon="eye" />
         </span>
@@ -27,7 +36,28 @@
 </template>
 
 <script setup>
-
+import { ref } from 'vue'
+import { validatePassword } from './rules'
+const loginForm = ref({
+  username: 'super-admin',
+  password: '123456'
+})
+const loginRules = ref({
+  username: [
+    {
+      required: true,
+      trigger: 'blur',
+      message: '用户名为必填项'
+    }
+  ],
+  password: [
+    {
+      required: true,
+      trigger: 'blur',
+      validator: validatePassword()
+    }
+  ]
+})
 </script>
 
 <style lang="scss" scoped>
@@ -48,7 +78,7 @@ $cursor: #fff;
     margin: 0 auto;
     overflow: hidden;
 
-    ::v-deep .el-form-item{
+    ::v-deep .el-form-item {
       border: 1px solid ragb(255, 255, 255, 0.1);
       background: rgba(0, 0, 0, 0.1);
       border-radius: 5px;
