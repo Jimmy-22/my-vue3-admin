@@ -23,9 +23,13 @@
           placeholder="password"
           name="password"
           v-model="loginForm.password"
+          :type="pwdType"
         ></el-input>
         <span class="show-pwd">
-          <svg-icon icon="eye" />
+          <svg-icon
+            :icon="pwdType === 'password' ? 'eye' : 'eye-open'"
+            @click="onchangePwdType"
+          />
         </span>
       </el-form-item>
       <el-button type="primary" style="width: 100%; margin-bottom: 30px">
@@ -58,6 +62,15 @@ const loginRules = ref({
     }
   ]
 })
+
+const pwdType = ref('password')
+const onchangePwdType = () => {
+  if (pwdType.value === 'password') {
+    pwdType.value = 'text'
+  } else {
+    pwdType.value = 'password'
+  }
+}
 </script>
 
 <style lang="scss" scoped>
