@@ -1,24 +1,3 @@
 # my-vue3-admin
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+vue-cli搭建项目，用一下最新的vue3全家桶，实现vue-element-admin的一些功能
