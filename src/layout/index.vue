@@ -17,7 +17,7 @@
 <script setup>
 import variables from '@/styles/variables.scss'
 import Navbar from './components/Navbar'
-import Sidebar from './components/Sidebar'
+import Sidebar from './Sidebar/index'
 import AppMain from './components/AppMain'
 </script>
 
