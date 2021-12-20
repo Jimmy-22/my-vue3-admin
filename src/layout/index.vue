@@ -28,6 +28,8 @@ import AppMain from './components/AppMain'
 .app-wrapper {
   @include clearfix;
   @include relative;
+  height: 100%;
+  width: 100%;
 }
 
 .fixed-header {
