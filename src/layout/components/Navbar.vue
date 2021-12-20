@@ -28,7 +28,7 @@ const logout = () => {
 
 <style lang="scss" scoped>
 .navbar {
-  border: 1px solid blue;
+  border-bottom: 1px solid #909399;
   overflow: hidden;
   height: 50px;
   position: relative;

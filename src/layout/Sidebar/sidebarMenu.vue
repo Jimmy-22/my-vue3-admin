@@ -1,5 +1,4 @@
 <template>
-  <!-- 一级 menu 菜单 -->
   <el-menu
     :default-active="activeMenu"
     text-color="#fff"

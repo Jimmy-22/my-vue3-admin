@@ -16,6 +16,5 @@ import {} from 'vue'
   overflow: hidden;
   box-sizing: border-box;
   padding: 61px 20px 20px 20px;
-  border: 1px solid red;
 }
 </style>
